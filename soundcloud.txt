@@ -1,0 +1,15 @@
+textfield for the user to input song
+get search
+send reuquest to the api endpoint
+analyse the result for the ones you need
+arrange them on the page
+style page
+
+
+Client ID 948e8e0197ac7c3448db90b3183718df
+
+Client Secret 4a679f40abdedbda3e78988c1b4f0a29
+
+end user autorization https://soundcloud.com/connect
+token: https://api.soundcloud.com/oauth2/token
+

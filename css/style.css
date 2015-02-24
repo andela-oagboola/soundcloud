@@ -1,15 +1,53 @@
 #view {
+  position: absolute;
   margin: auto;
-  background-color: blue;
-  width: 500px;
-  height: 500px;
-  text-align: center;
+  background-color: rgba(10, 13, 171, 0.5);
+  width: 900px;
+  height: 630px;
+  left: 400px;
+  padding: 10px;
+  border-radius: 10px;
 }
-#output {
-  background-color: white;
-  
-}
-
 #output ul {
+  list-style: none;
+}
+#side {
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  width: 300px;
+  height: 630px;
+  background-color: red;
+  border-radius: 10px;
+}
+#eachOutput {
+  width: 870px;
+  height: 600px;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto;
+}
+/*#image{
+  position: absolute;
+  border: 2px solid black;
+  width: 200px;
+  height: 190px;
+  left: 20px;
+  border-radius: 10px;
+}*/
+img{
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+/*#info {
+  position: absolute;
+  left: 250px;
+  border: 2px solid yellow;
+  height: 190px;
+  width: 600px;
+  background: brown;
+}*/
+#eachOutput ul {
   list-style: none;
 }

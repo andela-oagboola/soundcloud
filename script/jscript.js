@@ -21,12 +21,22 @@ var songSearch = {
 
   getSong: function(search) {
     $.getJSON(songSearch.url+search, function(response) {
-      console.log(response);
+      //console.log(response);
+      $('#eachOutput ul').empty();
       $(response).each(function(index) {
-        console.log(response[index].title);
-        $('#output ul').empty();
-        $('#output ul').append("<li>"+response[index].title+"</li>")
-      })
+        //console.log(response[index].title);
+        $('#output ul').append("<li>"+response[index].title+"</li>");
+        var img = response[index].artwork_url;
+        var title = response[index].title;
+        var link = response[index].permalink_url;
+        //console.log(img);
+        // var a = $('img').attr('src',img);
+        // var b = $('#title').html("Title: "+title);
+        // var c= $('#info a').attr('href',link);
+       // $('#eachOutput').html("<div id=image><img src="+img+"></div><div id=info><a href="+link+"><p id=title>"+title+"</p></a><p id=artiste>Artiste:</p>
+       // </div>")
+      $('#eachOutput ul').append("<li><img src="+img+"><p>"+title+"</p></li>")
+      });
     });
   }
 };
