@@ -1,0 +1,15 @@
+#view {
+  margin: auto;
+  background-color: blue;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+}
+#output {
+  background-color: white;
+  
+}
+
+#output ul {
+  list-style: none;
+}
