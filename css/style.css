@@ -1,53 +1,43 @@
-#view {
-  position: absolute;
-  margin: auto;
-  background-color: rgba(10, 13, 171, 0.5);
-  width: 900px;
-  height: 630px;
-  left: 400px;
-  padding: 10px;
-  border-radius: 10px;
-}
-#output ul {
-  list-style: none;
-}
-#side {
-  padding: 10px;
-  position: absolute;
-  text-align: center;
-  width: 300px;
-  height: 630px;
-  background-color: red;
-  border-radius: 10px;
-}
-#eachOutput {
-  width: 870px;
-  height: 600px;
-  padding: 10px;
-  border-radius: 10px;
-  overflow: auto;
-}
-/*#image{
-  position: absolute;
-  border: 2px solid black;
+.info {
   width: 200px;
-  height: 190px;
-  left: 20px;
-  border-radius: 10px;
-}*/
-img{
+  height: 100px;
+}
+#imageHolder img {
   width: 200px;
   height: 200px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
-/*#info {
-  position: absolute;
-  left: 250px;
-  border: 2px solid yellow;
-  height: 190px;
-  width: 600px;
-  background: brown;
-}*/
-#eachOutput ul {
-  list-style: none;
+#flow{
+  display: inline-block;
+}
+
+#error {
+  background-color: #ee6e73;
+  color: white;
+  border-radius: 10px;
+  height: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+
+#errorWrapper {
+  display: none;
+}
+
+#noResult {
+  background-color: #ee6e73;
+  color: white;
+  border-radius: 10px;
+  height: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+
+#noResultWrapper {
+  display: none;
+}
+
+#preloader {
+  border-radius: 10px;
+  display: none;
 }

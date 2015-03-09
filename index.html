@@ -1,20 +1,38 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="script/jscript.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.css">
 </head>
 <body>
-  <div id="side">
-    <input type="text" id="textbox"/>
-    <input type="submit" value="search" id="searchButton"/>
-  </div>
-  <div id="view">
-      <div id="eachOutput">
-        <ul>
-        </ul>
+  <header>
+    <nav class="top-nav">
+      <div class="container">
+        <div class="nav-wrapper"><h4>Music Player APP</h4></div>
       </div>
+    </nav>
+  </header>
+  <div class="container-fluid">
+    <div class="row container">
+      <div class="col s12">
+        <input type="text" id="textbox" placeholder="Type in your search here"/>
+        <button id="searchButton" class="waves-effect waves-light btn">Search</button>
+      </div>
+      <div class="row" id="errorWrapper">
+        <div class="col s4 offset-s4 grid-example" id ="error">Make sure you type in a search value</div>
+      </div>
+      <div class="row" id="noResultWrapper">
+        <div class="col s4 offset-s4 grid-example" id ="noResult">No results found</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12" id="details">
+      <div class="col s12 offset-s3" ><img src="images/equalizer.gif" id="preloader"></div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

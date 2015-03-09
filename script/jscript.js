@@ -9,33 +9,45 @@ var songSearch = {
 
   getSearch: function () {
     $('#searchButton').click( function() {
+      $('#details').empty();
+      $('#errorWrapper').hide();
+      $('#noResultWrapper').hide();
+      $('#preloader').show();
     var song = $('#textbox').val();
-      if(song != "") {
+      if(song !== "") {
         songSearch.getSong(song);
       }
       else {
-        alert("the song field cannot be empty");
+        $('#preloader').hide();
+        $('#errorWrapper').show();
       }
     });
   },
 
   getSong: function(search) {
-    $.getJSON(songSearch.url+search, function(response) {
-      //console.log(response);
-      $('#eachOutput ul').empty();
+    $.getJSON(songSearch.url + search, function(response) {
+      $('#preloader').hide();
+      console.log(response);
+      if(response.length === 0) {
+        $('#preloader').hide();
+        $('#errorWrapper').hide();
+        $('#noResultWrapper').show();
+      }
       $(response).each(function(index) {
-        //console.log(response[index].title);
-        $('#output ul').append("<li>"+response[index].title+"</li>");
-        var img = response[index].artwork_url;
-        var title = response[index].title;
-        var link = response[index].permalink_url;
-        //console.log(img);
-        // var a = $('img').attr('src',img);
-        // var b = $('#title').html("Title: "+title);
-        // var c= $('#info a').attr('href',link);
-       // $('#eachOutput').html("<div id=image><img src="+img+"></div><div id=info><a href="+link+"><p id=title>"+title+"</p></a><p id=artiste>Artiste:</p>
-       // </div>")
-      $('#eachOutput ul').append("<li><img src="+img+"><p>"+title+"</p></li>")
+        
+       var img = response[index].artwork_url;
+       if(response[index].artwork_url === null) {
+        img = "images/musical_notes_gray_small.png";
+       }
+       else {
+        img = response[index].artwork_url;
+       }
+       var title = response[index].title;
+       var link = response[index].permalink_url;
+       var genre = response[index].genre;
+       var stream = response[index].stream_url + "?client_id=" + songSearch.clientId;
+       var whole = "<div id=main><div class=col s3 id=imageHolder><div><img src=" + img + "><br><div class=info>Title: "+title+"<br>Genre: "+genre+"</div><br><audio controls><source src= " + stream + " type=audio/mpeg> Your browser does not support the audio element.</audio></div></div>";
+       $('#details').append(whole);
       });
     });
   }
