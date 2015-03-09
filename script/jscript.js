@@ -27,7 +27,6 @@ var songSearch = {
   getSong: function(search) {
     $.getJSON(songSearch.url + search, function(response) {
       $('#preloader').hide();
-      console.log(response);
       if(response.length === 0) {
         $('#preloader').hide();
         $('#errorWrapper').hide();
