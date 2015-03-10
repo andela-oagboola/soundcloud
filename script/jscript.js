@@ -46,7 +46,8 @@ var songSearch = {
        var link = response[index].permalink_url;
        var genre = response[index].genre;
        var stream = response[index].stream_url + "?client_id=" + songSearch.clientId;
-       var whole = "<div id=main><div class=col s3 id=imageHolder><div><img src=" + img + "><br><div class=info>Title: "+title+"<br>Genre: "+genre+"</div><br><audio controls><source src= " + stream + " type=audio/mpeg> Your browser does not support the audio element.</audio></div></div>";
+       console.log(stream);
+       var whole = "<div id=main><div class= \"col s3\" id=imageHolder><div><img src=" + img + "><br><div class=info>Title: "+title+"<br>Genre: "+genre+"</div><br><audio controls><source src= " + stream + " type=audio/mpeg> Your browser does not support the audio element.</audio></div></div>";
        $('#details').append(whole);
       });
     });

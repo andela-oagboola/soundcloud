@@ -10,7 +10,9 @@
 #flow{
   display: inline-block;
 }
-
+#textbox {
+  text-align: center
+}
 #error {
   background-color: #ee6e73;
   color: white;
